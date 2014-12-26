@@ -42,7 +42,7 @@ class CreatPost(unittest.TestCase):
         self.login(self.username,self.passwd)
         self.createPost()
 
-        #进入文章列表页面，准备删除文章
+        #进入 所有文章 页面，准备删除文章
         self.driver.get("http://localhost/wordpress/wp-admin/edit.php")
         # xxxxxxxxxxxxxx
 
@@ -86,6 +86,17 @@ class CreatPost(unittest.TestCase):
         self.setContent(content)
         publishBtn = self.driver.find_element_by_id('publish')
         publishBtn.click()
+
+        return self.fetchPostId()
+
+    def fetchPostId(self):
+        postUrl = self.driver.find_element_by_id("sample-permalink")
+
+        #获得 文章的链接地址，如 http://localhost/wordpress/?p=25，并获得文章id号
+        return postUrl.split("=")[1]
+
+
+
 
 
 
