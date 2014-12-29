@@ -65,7 +65,5 @@ class CreatPost(unittest.TestCase):
         js = "document.getElementById('content_ifr').contentWindow.document.body.innerHTML='"+content+"'"
         self.driver.execute_script(js)
 
-
-
 if __name__ == '__main__':
     unittest.main()

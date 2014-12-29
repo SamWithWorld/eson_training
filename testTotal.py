@@ -15,32 +15,22 @@ class CreatPost(unittest.TestCase):
         self.username = 'admin'
         self.passwd   = 'admin'
 
-#暂时注释掉了登陆用例
-##    def testLogin(self):
-##        print 'testLogin'
-##
-##        #登陆操作
-##        self.login(self.username,self.passwd)
-##
-##        self.assertIn('wp-admin',self.driver.current_url)
-##        # 检查用户信息: 欢迎你，admin
-##        self.assertTrue(self.username in self.driver.find_element_by_css_selector('li#wp-admin-bar-my-account a').text)
 
-##    def testCreatePost(self):
-##        print 'testCreatePost'
-##        self.login(self.username,self.passwd)
-##
-##        # title 由当前时间组成，以免输入固定字符Sam、Test Content
-##        title = 'Sam'+time.strftime("%Y-%m-%d %H:%M:%S")
-##
-##        #创建 新文章
-##        #self.createPost()
-##        self.createPost(title)
-##
-##        #进入首页，进行断言
-##        self.driver.get('http://localhost/wordpress/')
-##        firstpost = self.driver.find_element_by_css_selector('h1.entry-title a')
-##        self.assertEqual(title,firstpost.text)
+    def testCreatePost(self):
+        print 'testCreatePost'
+        self.login(self.username,self.passwd)
+
+        # title 由当前时间组成，以免输入固定字符Sam、Test Content
+        title = 'Sam'+time.strftime("%Y-%m-%d %H:%M:%S")
+
+        #创建 新文章
+        #self.createPost()
+        self.createPost(title)
+
+        #进入首页，进行断言
+        self.driver.get('http://localhost/wordpress/')
+        firstpost = self.driver.find_element_by_css_selector('h1.entry-title a')
+        self.assertEqual(title,firstpost.text)
 
     def testDeletePost(self):
         print 'testDeletePost'
