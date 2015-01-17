@@ -44,8 +44,6 @@ class CreatPost(unittest.TestCase):
         firstpost = self.driver.find_element_by_css_selector('h1.entry-title a')
         self.assertEqual(title,firstpost.text)
 
-
-
     def tearDown(self):
         print 'End test'
         self.driver.quit()

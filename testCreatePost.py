@@ -6,7 +6,6 @@ import unittest
 import time
 from lib.LibLogin import LibLogin
 
-
 class TestCreatPost(unittest.TestCase):
 
     def setUp(self):

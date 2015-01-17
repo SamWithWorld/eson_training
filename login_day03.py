@@ -93,7 +93,7 @@ class CreatPost(unittest.TestCase):
 
     def createPost(self,title='Default Title'):
         # content 由当前时间组成，以免输入固定字符Test Content
-        #title = 'Sam'+time.strftime("%Y-%m-%d %H:%M:%S")
+
         content = 'Test Content'+time.strftime("%Y-%m-%d %H:%M:%S")
 
         #调用添加文章的方法
